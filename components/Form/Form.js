@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 
 export default function Form({ onSubmitClick }) {
+  console.log(StyledFieldset);
   return (
     <section>
       <h2 id="form-heading">Create a new game</h2>
@@ -14,28 +15,25 @@ export default function Form({ onSubmitClick }) {
       <form
         aria-labelledby="form-heading"
         aria-describedby="form-description"
-      ></form>
-      <StyledFieldset>
-        <Input
-          name={"Name of game"}
-          placeholder={"e.g. Dodeligo"}
-          labelText={"Name of game"}
-        ></Input>
-        <Input
-          name={"Player names, separated by comma"}
-          placeholder={"e.g. John Doe, Jane Doe"}
-          labelText={"Player names, separated by comma"}
-        ></Input>
-        <Button
-          onClick={onSubmitClick}
-          name={"create Game"}
-          type="submit"
-        ></Button>
-      </StyledFieldset>
+        onSubmit={(event) => onSubmitClick(event)}
+      >
+        <StyledFieldset>
+          <Input
+            name="Name of game"
+            placeholder="e.g. Dodeligo"
+            labelText="Name of game"
+          ></Input>
+          <Input
+            name="Player names, separated by comma"
+            placeholder="e.g. John Doe, Jane Doe"
+            labelText="Player names, separated by comma"
+          ></Input>
+          <Button name="create Game" type="submit"></Button>
+        </StyledFieldset>
+      </form>
       <StyledDiv>
         <Button name={"Play"}></Button>
-        <Link href="/testGame">
-          {/* needs to be replaced with the history page */}
+        <Link href="/history">
           <a>
             <Button name={"History"}></Button>
           </a>
