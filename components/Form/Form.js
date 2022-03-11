@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 
-export default function Form() {
+export default function Form({ onSubmitClick }) {
   return (
     <section>
       <h2 id="form-heading">Create a new game</h2>
@@ -25,7 +25,7 @@ export default function Form() {
           placeholder={"e.g. John Doe, Jane Doe"}
           labelText={"Player names, separated by comma"}
         ></Input>
-        <Button name={"create Game"}></Button>
+        <Button onClick={onSubmitClick} name={"create Game"}></Button>
       </StyledFieldset>
       <StyledDiv>
         <Button name={"Play"}></Button>

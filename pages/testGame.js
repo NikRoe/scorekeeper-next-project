@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import Button from "../../components/Button/Button";
+// import { useRouter } from "next/router";
+import Button from "../components/Button/Button";
 
 export default function Game() {
   // using dynaming routing to create infinite amount of pages
-  const router = useRouter;
-  const { gamesID } = router.query;
+  //   const router = useRouter;
+  //   const { gamesID } = router.query;
   return (
     <>
       <Head>Scorekeeper</Head>
@@ -22,6 +22,3 @@ export default function Game() {
     </>
   );
 }
-
-// we need to create ids we can reference to
-// we need data (our array of games)
