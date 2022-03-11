@@ -23,18 +23,23 @@ const initialState = [
 
 function MyApp({ Component, pageProps }) {
   const [data, setData] = useState(initialState);
+  const [id, setId] = useState("");
+  const [nameOfGame, setNameOfGame] = useState("");
+  const [players, setPlayers] = useState([]);
+
+  function handleGameInput(inputValue) {
+    setNameOfGame(inputValue);
+  }
 
   function handleSubmitClick(event) {
+    console.log("event: ", event);
     event.preventDefault();
     setData([
       ...data,
       {
-        gamesID: 6,
-        nameOfGame: "Dodelido",
-        players: [
-          { name: "John Doe", score: 0 },
-          { name: "Jane Doe", score: 0 },
-        ],
+        gamesID: id,
+        nameOfGame: nameOfGame,
+        players: players,
       },
     ]);
   }
@@ -43,7 +48,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} onSubmitClick={handleSubmitClick} data={data} />
+      <Component
+        {...pageProps}
+        handleGameInput={handleGameInput}
+        onSubmitClick={handleSubmitClick}
+        data={data}
+      />
     </>
   );
 }

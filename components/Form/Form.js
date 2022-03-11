@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 
-export default function Form({ onSubmitClick }) {
+export default function Form({ onSubmitClick, handleGameInput }) {
   console.log(StyledFieldset);
   return (
     <section>
@@ -22,6 +22,7 @@ export default function Form({ onSubmitClick }) {
             name="Name of game"
             placeholder="e.g. Dodeligo"
             labelText="Name of game"
+            onChange={(event) => handleGameInput(event.target.value)}
           ></Input>
           <Input
             name="Player names, separated by comma"
