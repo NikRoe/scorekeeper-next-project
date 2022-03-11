@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
@@ -25,11 +26,20 @@ export default function Form({ onSubmitClick }) {
           placeholder={"e.g. John Doe, Jane Doe"}
           labelText={"Player names, separated by comma"}
         ></Input>
-        <Button onClick={onSubmitClick} name={"create Game"}></Button>
+        <Button
+          onClick={onSubmitClick}
+          name={"create Game"}
+          type="submit"
+        ></Button>
       </StyledFieldset>
       <StyledDiv>
         <Button name={"Play"}></Button>
-        <Button name={"History"}></Button>
+        <Link href="/testGame">
+          {/* needs to be replaced with the history page */}
+          <a>
+            <Button name={"History"}></Button>
+          </a>
+        </Link>
       </StyledDiv>
     </section>
   );

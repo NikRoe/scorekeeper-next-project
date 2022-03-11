@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 
   function handleSubmitClick() {
     setData([...data], {
-      id: nanoid(20),
+      gamesID: 5,
       nameOfGame: "Dodelido",
       player: [
         { name: "John Doe", score: 0 },
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component {...pageProps} onSubmitClick={handleSubmitClick} />
     </>
   );
 }
