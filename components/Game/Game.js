@@ -17,8 +17,11 @@ export default function Game({ game }) {
       {showScore &&
         game.players.map((player) => (
           <>
-            <p key={player.name}>{player.name}</p>
-            <p key={player.score}> {player.score}</p>
+            <StyledGameInfos key={player.name}>{player.name}</StyledGameInfos>
+            <StyledGameInfos key={player.score}>
+              {" "}
+              {player.score}
+            </StyledGameInfos>
           </>
         ))}
     </>
@@ -26,5 +29,9 @@ export default function Game({ game }) {
 }
 
 const StyledGameName = styled.h2`
+  color: #294d77;
+`;
+
+const StyledGameInfos = styled.p`
   color: #294d77;
 `;
