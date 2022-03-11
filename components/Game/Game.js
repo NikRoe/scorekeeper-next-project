@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import styled from "styled-components";
 
 export default function Game({ game }) {
   const [showScore, setShowScore] = useState(false);
@@ -9,7 +10,7 @@ export default function Game({ game }) {
   }
   return (
     <>
-      <h2>{game.nameOfGame}</h2>
+      <StyledGameName>{game.nameOfGame}</StyledGameName>
       <Button name={"Continue Game"}></Button>
       <Button onClick={handleClick} name={"Show scores"}></Button>
 
@@ -23,3 +24,7 @@ export default function Game({ game }) {
     </>
   );
 }
+
+const StyledGameName = styled.h2`
+  color: #294d77;
+`;

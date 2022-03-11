@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
@@ -13,6 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #f1faee;
+    background-color: #6062ce;
+    color: white;
   }
 `;
