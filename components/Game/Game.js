@@ -15,10 +15,10 @@ export default function Game({ game }) {
 
       {showScore &&
         game.players.map((player) => (
-          <>
-            <p key={player.name}>{player.name}</p>
+          <div key={player.id}>
+            <p>{player.name}</p>
             <p key={player.score}> {player.score}</p>
-          </>
+          </div>
         ))}
     </>
   );

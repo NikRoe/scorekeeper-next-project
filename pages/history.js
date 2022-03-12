@@ -19,7 +19,7 @@ export default function History({ data }) {
 
       <Link href="/">
         <a>
-          <Button name={"Back to home page"}></Button>
+          <Button name={"Play"}></Button>
         </a>
       </Link>
     </>

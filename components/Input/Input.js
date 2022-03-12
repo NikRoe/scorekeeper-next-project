@@ -1,10 +1,23 @@
 import styled from "styled-components";
 
-export default function Input({ name, placeholder, labelText }) {
+export default function Input({
+  name,
+  placeholder,
+  labelText,
+  value,
+  onChange,
+}) {
   return (
     <StyledDiv>
       <label htmlFor={name}>{labelText}</label>
-      <input required id={name} name={name} placeholder={placeholder}></input>
+      <input
+        required
+        id={name}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      ></input>
     </StyledDiv>
   );
 }
