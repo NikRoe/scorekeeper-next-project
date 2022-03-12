@@ -6,9 +6,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-width:100 vw;
-height: 100vh;
+    height:200%;
     background: linear-gradient(to bottom right,#9da1e7,#6062ce);
+    background-size:cover;
   };
 
   :root {
