@@ -4,16 +4,21 @@ import Button from "../../components/Button/Button";
 
 export default function Game({ data }) {
   // using dynaming routing to create infinite amount of pages
+  console.log("data:", data);
+  // const query = useRouter().query;
   const router = useRouter();
   const { gamesID } = router.query;
 
-  console.log("gamesID", gamesID);
+  // console.log("gamesID", gamesID);
 
-  const currentGame = data.filter((entry) => entry.gamesID === 7);
+  console.log("query", gamesID);
+  console.log("data", data[0].gamesID);
 
-  console.log(currentGame[0].gamesID == gamesID);
+  // const currentGame = data.filter((entry) => entry.gamesID == 5);
 
-  console.log(currentGame);
+  // console.log(currentGame[0].gamesID == gamesID);
+
+  // console.log(currentGame);
 
   return (
     <>

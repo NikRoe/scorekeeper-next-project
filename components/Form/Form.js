@@ -13,15 +13,15 @@ const initialFormData = {
 export default function Form({ onSubmitClick }) {
   const [formData, setFormdata] = useState(initialFormData);
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     setFormdata({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.log(formData);
     onSubmitClick(
       formData.nameOfGame,
@@ -64,6 +64,11 @@ export default function Form({ onSubmitClick }) {
         <Link href="/history">
           <a>
             <Button name={"History"}></Button>
+          </a>
+        </Link>
+        <Link href="/testGame">
+          <a>
+            <Button name={"Testgame"}></Button>
           </a>
         </Link>
       </StyledDiv>
