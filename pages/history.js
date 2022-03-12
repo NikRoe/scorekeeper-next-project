@@ -27,8 +27,10 @@ export default function History({ data }) {
 }
 
 const StyledDiv = styled.div`
+  background-color: white;
   border-radius: 14px;
   padding: 2rem;
-  border: black solid 2px;
+  border: white solid 2px;
   margin: 2rem;
+  box-shadow: -5px 13px 12px -1px rgba(0, 0, 0, 0.75);
 `;

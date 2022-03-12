@@ -5,7 +5,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+width:100 vw;
+height: 100vh;
+    background: linear-gradient(to bottom right,#9da1e7,#6062ce);
+  };
+
   :root {
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
@@ -13,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     text-align: center;
-    background-color: #f1faee;
+    color: white;
   }
 `;

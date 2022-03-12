@@ -18,17 +18,19 @@ export default function Form({ onSubmitClick, handleGameInput }) {
         onSubmit={(event) => onSubmitClick(event)}
       >
         <StyledFieldset>
-          <Input
-            name="Name of game"
-            placeholder="e.g. Dodeligo"
-            labelText="Name of game"
-            onChange={(event) => handleGameInput(event.target.value)}
-          ></Input>
-          <Input
-            name="Player names, separated by comma"
-            placeholder="e.g. John Doe, Jane Doe"
-            labelText="Player names, separated by comma"
-          ></Input>
+          <div>
+            <Input
+              name="Name of game"
+              placeholder="e.g. Dodeligo"
+              labelText="Name of game"
+              onChange={(event) => handleGameInput(event.target.value)}
+            ></Input>
+            <Input
+              name="Player names, separated by comma"
+              placeholder="e.g. John Doe, Jane Doe"
+              labelText="Player names, separated by comma"
+            ></Input>
+          </div>
           <Button name="create Game" type="submit"></Button>
         </StyledFieldset>
       </form>
@@ -47,6 +49,13 @@ export default function Form({ onSubmitClick, handleGameInput }) {
 const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid white;
+  color: #294d77;
+  margin: 1em;
+  box-shadow: -5px 13px 12px -1px rgba(0, 0, 0, 0.75);
 `;
 
 const StyledDiv = styled.div`
