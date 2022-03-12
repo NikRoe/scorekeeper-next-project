@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Button from "../components/Button/Button";
 import Player from "../components/Player/Player";
 
+
 const testGame = {
   gamesID: 5,
   nameOfGame: "Dodelido",
@@ -16,8 +17,8 @@ const testGame = {
 export default function Game({}) {
   return (
     <>
-      <Head>Scorekeeper</Head>
-      <h1>{testGame.nameOfGame}</h1>
+      <Head>{testGame.nameOfGame}</Head>
+      <StyledH1>Scorekeeper</StyledH1>
       <StyledDiv>
         {testGame.players.map((player) => (
           <Player player={player} key={player.id}></Player>
@@ -34,6 +35,12 @@ export default function Game({}) {
   );
 }
 
+const StyledH1 = styled.h1`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
+`;
+const StyledH2 = styled.h2`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
+`;
 const StyledDiv = styled.div`
   background-color: white;
   border-radius: 14px;
@@ -42,4 +49,5 @@ const StyledDiv = styled.div`
   margin: 2rem;
   color: #294d77;
   box-shadow: -5px 13px 12px -1px rgba(0, 0, 0, 0.75);
+
 `;

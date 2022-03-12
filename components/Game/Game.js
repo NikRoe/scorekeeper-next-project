@@ -16,12 +16,13 @@ export default function Game({ game }) {
 
       {showScore &&
         game.players.map((player) => (
-
-          <div key={player.id}>
+          <StyledPlayerDiv key={player.id}>
             <StyledGameInfos>{player.name}</StyledGameInfos>
-            <StyledGameInfos key={player.score}> {player.score}</StyledGameInfos>
-          </div>
-
+            <StyledGameInfos key={player.score}>
+              {" "}
+              {player.score}
+            </StyledGameInfos>
+          </StyledPlayerDiv>
         ))}
     </>
   );
@@ -33,4 +34,12 @@ const StyledGameName = styled.h2`
 
 const StyledGameInfos = styled.p`
   color: #294d77;
+`;
+
+const StyledPlayerDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 `;
