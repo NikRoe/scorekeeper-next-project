@@ -16,13 +16,12 @@ export default function Game({ game }) {
 
       {showScore &&
         game.players.map((player) => (
-          <>
-            <StyledGameInfos key={player.name}>{player.name}</StyledGameInfos>
-            <StyledGameInfos key={player.score}>
-              {" "}
-              {player.score}
-            </StyledGameInfos>
-          </>
+
+          <div key={player.id}>
+            <StyledGameInfos>{player.name}</StyledGameInfos>
+            <StyledGameInfos key={player.score}> {player.score}</StyledGameInfos>
+          </div>
+
         ))}
     </>
   );

@@ -1,37 +1,62 @@
+import { nanoid } from "nanoid";
 import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 
-export default function Form({ onSubmitClick, handleGameInput }) {
-  console.log(StyledFieldset);
+const initialFormData = {
+  nameOfGame: "",
+  playerNames: "",
+};
+
+export default function Form({ onSubmitClick }) {
+  const [formData, setFormdata] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    setFormdata({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    onSubmitClick(
+      formData.nameOfGame,
+      formData.playerNames.split(",").map((player) => {
+        return { name: player.trim(), score: 0, id: nanoid() };
+      })
+    );
+  };
+
   return (
     <section>
-      <h2 id="form-heading">Create a new game</h2>
-      <p id="form-description">
-        Here you may enter all the details you need to create a fancy and great
-        game
-      </p>
       <form
         aria-labelledby="form-heading"
         aria-describedby="form-description"
-        onSubmit={(event) => onSubmitClick(event)}
+        onSubmit={handleSubmit}
       >
+        <h2 id="form-heading">Create a new game</h2>
         <StyledFieldset>
           <div>
-            <Input
-              name="Name of game"
-              placeholder="e.g. Dodeligo"
-              labelText="Name of game"
-              onChange={(event) => handleGameInput(event.target.value)}
-            ></Input>
-            <Input
-              name="Player names, separated by comma"
-              placeholder="e.g. John Doe, Jane Doe"
-              labelText="Player names, separated by comma"
-            ></Input>
+          <Input
+            name="nameOfGame"
+            placeholder="e.g. Dodeligo"
+            labelText="Name of game"
+            value={formData.nameOfGame}
+            onChange={handleChange}
+          ></Input>
+          <Input
+            name="playerNames"
+            placeholder="e.g. John Doe, Jane Doe"
+            labelText="Player names, separated by comma"
+            value={formData.playerNames}
+            onChange={handleChange}
+          ></Input>
           </div>
-          <Button name="create Game" type="submit"></Button>
+          <Button name="create Game"></Button>
         </StyledFieldset>
       </form>
       <StyledDiv>

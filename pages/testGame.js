@@ -1,16 +1,16 @@
 import Head from "next/head";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Button from "../components/Button/Button";
 
-export default function Game() {
+export default function Game({ data }) {
   // using dynaming routing to create infinite amount of pages
-  //   const router = useRouter;
-  //   const { gamesID } = router.query;
+  // const router = useRouter;
+  // const { gamesID } = router.query;
   return (
     <>
       <Head>Scorekeeper</Head>
       <h1>Scorekeeper</h1>
-      <p>Dodelido</p>
+      <p>Post: </p>
       <div>
         {/* <Player>{Game.Player.name}</Player> */}
         <Button name={"-"}></Button>

@@ -1,5 +1,5 @@
 import { GlobalStyle } from "../components/GlobalStyle/GlobalStyle";
-// import { nanoid } from "nanoid";
+import { nanoid } from "nanoid";
 import { useState } from "react";
 
 const initialState = [
@@ -7,52 +7,48 @@ const initialState = [
     gamesID: 5,
     nameOfGame: "Dodelido",
     players: [
-      { name: "John Doe", score: 0 },
-      { name: "Jane Doe", score: 0 },
+      { name: "John Doe", score: 0, id: 20 },
+      { name: "Jane Doe", score: 2, id: 1 },
     ],
   },
   {
     gamesID: 7,
     nameOfGame: "Dodelido",
     players: [
-      { name: "John Doe", score: 0 },
-      { name: "Jane Doe", score: 0 },
+      { name: "John Doe", score: 3, id: 3 },
+      { name: "Jane Doe", score: 0, id: 7 },
     ],
   },
 ];
 
 function MyApp({ Component, pageProps }) {
   const [data, setData] = useState(initialState);
-  const [id, setId] = useState("");
-  const [nameOfGame, setNameOfGame] = useState("");
-  const [players, setPlayers] = useState([]);
+  const [currentGame, setCurrentGame] = useState();
 
-  function handleGameInput(inputValue) {
-    setNameOfGame(inputValue);
-  }
-
-  function handleSubmitClick(event) {
-    console.log("event: ", event);
-    event.preventDefault();
+  function handleSubmitClick(nameInput, playerInput) {
     setData([
-      ...data,
       {
-        gamesID: id,
-        nameOfGame: nameOfGame,
-        players: players,
+        gamesID: nanoid(),
+        nameOfGame: nameInput,
+        players: playerInput,
       },
+      ...data,
     ]);
+    setCurrentGame({
+      gamesID: nanoid(),
+      nameOfGame: nameInput,
+      players: playerInput,
+    });
   }
-  console.log(data);
 
   return (
     <>
       <GlobalStyle />
       <Component
         {...pageProps}
-        handleGameInput={handleGameInput}
         onSubmitClick={handleSubmitClick}
         data={data}
+        currentGame={currentGame}
       />
     </>
   );
