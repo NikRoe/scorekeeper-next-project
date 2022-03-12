@@ -13,15 +13,15 @@ const initialFormData = {
 export default function Form({ onSubmitClick }) {
   const [formData, setFormdata] = useState(initialFormData);
 
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     setFormdata({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.log(formData);
     onSubmitClick(
       formData.nameOfGame,
@@ -41,20 +41,20 @@ export default function Form({ onSubmitClick }) {
         <h2 id="form-heading">Create a new game</h2>
         <StyledFieldset>
           <div>
-          <Input
-            name="nameOfGame"
-            placeholder="e.g. Dodeligo"
-            labelText="Name of game"
-            value={formData.nameOfGame}
-            onChange={handleChange}
-          ></Input>
-          <Input
-            name="playerNames"
-            placeholder="e.g. John Doe, Jane Doe"
-            labelText="Player names, separated by comma"
-            value={formData.playerNames}
-            onChange={handleChange}
-          ></Input>
+            <Input
+              name="nameOfGame"
+              placeholder="e.g. Dodeligo"
+              labelText="Name of game"
+              value={formData.nameOfGame}
+              onChange={handleChange}
+            ></Input>
+            <Input
+              name="playerNames"
+              placeholder="e.g. John Doe, Jane Doe"
+              labelText="Player names, separated by comma"
+              value={formData.playerNames}
+              onChange={handleChange}
+            ></Input>
           </div>
           <Button name="create Game"></Button>
         </StyledFieldset>
@@ -64,6 +64,11 @@ export default function Form({ onSubmitClick }) {
         <Link href="/history">
           <a>
             <Button name={"History"}></Button>
+          </a>
+        </Link>
+        <Link href="/testGame">
+          <a>
+            <Button name={"Testgame"}></Button>
           </a>
         </Link>
       </StyledDiv>

@@ -25,6 +25,8 @@ function MyApp({ Component, pageProps }) {
   const [data, setData] = useState(initialState);
   const [currentGame, setCurrentGame] = useState();
 
+  console.log("data mainpage:", data);
+
   function handleSubmitClick(nameInput, playerInput) {
     setData([
       {
