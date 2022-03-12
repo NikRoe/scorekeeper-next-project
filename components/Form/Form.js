@@ -38,23 +38,23 @@ export default function Form({ onSubmitClick }) {
         aria-describedby="form-description"
         onSubmit={handleSubmit}
       >
-        <h2 id="form-heading">Create a new game</h2>
+        <StyledH2 id="form-heading">Create a new game</StyledH2>
         <StyledFieldset>
           <div>
-          <Input
-            name="nameOfGame"
-            placeholder="e.g. Dodeligo"
-            labelText="Name of game"
-            value={formData.nameOfGame}
-            onChange={handleChange}
-          ></Input>
-          <Input
-            name="playerNames"
-            placeholder="e.g. John Doe, Jane Doe"
-            labelText="Player names, separated by comma"
-            value={formData.playerNames}
-            onChange={handleChange}
-          ></Input>
+            <Input
+              name="nameOfGame"
+              placeholder="e.g. Dodeligo"
+              labelText="Name of game"
+              value={formData.nameOfGame}
+              onChange={handleChange}
+            ></Input>
+            <Input
+              name="playerNames"
+              placeholder="e.g. John Doe, Jane Doe"
+              labelText="Player names, separated by comma"
+              value={formData.playerNames}
+              onChange={handleChange}
+            ></Input>
           </div>
           <Button name="create Game"></Button>
         </StyledFieldset>
@@ -88,4 +88,11 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+`;
+
+const StyledH1 = styled.h1`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
+`;
+const StyledH2 = styled.h2`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
 `;

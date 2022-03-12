@@ -20,6 +20,8 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     justify-content: center;
     text-align: center;
+    
     color: white;
+  
   }
 `;

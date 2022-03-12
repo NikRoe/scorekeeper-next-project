@@ -7,8 +7,8 @@ import Game from "../components/Game/Game";
 export default function History({ data }) {
   return (
     <>
-      <h1>Scorekeeper</h1>
-      <h2>Previous Games</h2>
+      <StyledH1>Scorekeeper</StyledH1>
+      <StyledH2>Previous Games</StyledH2>
       <section>
         {data.map((game) => (
           <StyledDiv key={game.gamesID}>
@@ -33,4 +33,11 @@ const StyledDiv = styled.div`
   border: white solid 2px;
   margin: 2rem;
   box-shadow: -5px 13px 12px -1px rgba(0, 0, 0, 0.75);
+`;
+
+const StyledH1 = styled.h1`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
+`;
+const StyledH2 = styled.h2`
+  text-shadow: -2px 3px 6px rgba(0, 0, 0, 0.6);
 `;
