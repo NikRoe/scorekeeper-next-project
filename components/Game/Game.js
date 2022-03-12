@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import styled from "styled-components";
 
 export default function Game({ game }) {
   const [showScore, setShowScore] = useState(false);
@@ -9,17 +10,27 @@ export default function Game({ game }) {
   }
   return (
     <>
-      <h2>{game.nameOfGame}</h2>
+      <StyledGameName>{game.nameOfGame}</StyledGameName>
       <Button name={"Continue Game"}></Button>
       <Button onClick={handleClick} name={"Show scores"}></Button>
 
       {showScore &&
         game.players.map((player) => (
+
           <div key={player.id}>
-            <p>{player.name}</p>
-            <p key={player.score}> {player.score}</p>
+            <StyledGameInfos>{player.name}</StyledGameInfos>
+            <StyledGameInfos key={player.score}> {player.score}</StyledGameInfos>
           </div>
+
         ))}
     </>
   );
 }
+
+const StyledGameName = styled.h2`
+  color: #294d77;
+`;
+
+const StyledGameInfos = styled.p`
+  color: #294d77;
+`;

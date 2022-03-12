@@ -10,14 +10,19 @@ export default function Input({
   return (
     <StyledDiv>
       <label htmlFor={name}>{labelText}</label>
-      <input
+
+      <StyledInput
+
         required
         id={name}
         name={name}
         placeholder={placeholder}
+
         value={value}
         onChange={onChange}
-      ></input>
+      ></StyledInput>
+
+
     </StyledDiv>
   );
 }
@@ -28,4 +33,10 @@ const StyledDiv = styled.div`
   flex-direction: column;
   max-width: 40vw;
   gap: 0.5rem;
+`;
+
+const StyledInput = styled.input`
+  color: #91aac9;
+  border-radius: 5px;
+  border: 2px solid #91aac9;
 `;

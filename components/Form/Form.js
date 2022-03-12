@@ -40,6 +40,7 @@ export default function Form({ onSubmitClick }) {
       >
         <h2 id="form-heading">Create a new game</h2>
         <StyledFieldset>
+          <div>
           <Input
             name="nameOfGame"
             placeholder="e.g. Dodeligo"
@@ -54,6 +55,7 @@ export default function Form({ onSubmitClick }) {
             value={formData.playerNames}
             onChange={handleChange}
           ></Input>
+          </div>
           <Button name="create Game"></Button>
         </StyledFieldset>
       </form>
@@ -72,6 +74,13 @@ export default function Form({ onSubmitClick }) {
 const StyledFieldset = styled.fieldset`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid white;
+  color: #294d77;
+  margin: 1em;
+  box-shadow: -5px 13px 12px -1px rgba(0, 0, 0, 0.75);
 `;
 
 const StyledDiv = styled.div`
