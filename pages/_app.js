@@ -1,6 +1,7 @@
 import { GlobalStyle } from "../components/GlobalStyle/GlobalStyle";
 import { nanoid } from "nanoid";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const initialState = [
   {
@@ -23,35 +24,27 @@ const initialState = [
 
 function MyApp({ Component, pageProps }) {
   const [data, setData] = useState(initialState);
-  const [currentGame, setCurrentGame] = useState();
+  const router = useRouter();
 
   console.log("data mainpage:", data);
 
   function handleSubmitClick(nameInput, playerInput) {
+    const newID = nanoid();
     setData([
       {
-        gamesID: nanoid(),
+        gamesID: newID,
         nameOfGame: nameInput,
         players: playerInput,
       },
       ...data,
     ]);
-    setCurrentGame({
-      gamesID: nanoid(),
-      nameOfGame: nameInput,
-      players: playerInput,
-    });
+    router.push(`/games/${newID}`);
   }
 
   return (
     <>
       <GlobalStyle />
-      <Component
-        {...pageProps}
-        onSubmitClick={handleSubmitClick}
-        data={data}
-        currentGame={currentGame}
-      />
+      <Component {...pageProps} onSubmitClick={handleSubmitClick} data={data} />
     </>
   );
 }

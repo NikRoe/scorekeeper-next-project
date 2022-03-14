@@ -31,6 +31,10 @@ export default function Form({ onSubmitClick }) {
     );
   };
 
+  // const [gamesID, ...newData] = data;
+  // console.log("newdata:", newData);
+  // console.log("gamesID", gamesID);
+
   return (
     <section>
       <form
@@ -56,6 +60,7 @@ export default function Form({ onSubmitClick }) {
               onChange={handleChange}
             ></Input>
           </div>
+
           <Button name="create Game"></Button>
         </StyledFieldset>
       </form>
